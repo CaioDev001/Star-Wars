@@ -1,0 +1,328 @@
+@import url('https://fonts.cdnfonts.com/css/star-wars');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('../assets/background.webp');
+    background-size: cover;
+}
+
+
+header {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.navigation {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+a {
+    text-decoration: none;
+}
+
+#header {
+    width: 250px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+}
+
+#header-img {
+    width: 40%;
+    height: auto;
+}
+
+#header-text {
+    font-family: 'Star Wars', sans-serif;
+    font-size: 1rem;
+    color: aliceblue;
+}
+
+.social-media {
+    width: 130px;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 40px;
+}
+
+i {
+    color: aliceblue;
+    font-size: 1.2rem;
+}
+
+i:hover {
+    color: gold;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0;
+    margin-top: 25px;
+}
+
+h2 {
+    font-family: 'Star Wars', sans-serif;
+    margin-bottom: 20px;
+    color: gold;
+    font-weight: 300;
+    text-align: center;
+}
+
+.main-content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;        /* A partir do tamanho das imagens, o flex wrap realoca a próxima imagem para a linha de baixo, parecido com display grid. */
+    column-gap: 20px;
+    row-gap: 10px;
+    padding: 0 20px;
+}
+
+.cards {
+    width: 230px;
+    height: 470px;
+    background-position: 50% 50%;
+    background-size: cover;
+    display: flex;
+    align-items: end;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.5s;
+    padding: 5px;
+}
+
+.planet-cards {
+    width: 230px;
+    height: 470px;
+    background-position: 50% 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: end;
+    cursor: pointer;
+    transition: 0.5s;
+    padding: 5px;
+}
+
+.planet-cards:hover {
+    transform: scale(1.08);
+}
+
+.cards:hover {
+    transform: scale(1.02);
+}
+
+.cards-name-bg {
+    width: 100%;
+    height: 30px;
+    background-color: rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.cards-name {
+    font-family: 'Star Wars', sans-serif;
+    color: gold;
+    font-size: 1rem;
+}
+
+.buttons {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+button {
+    width: 70px;
+    height: 20px;
+    background-color: gold;
+    color: #000;
+    font-weight: 700;
+    border-radius: 3px;
+    cursor: pointer;
+    border: 1px solid #000;
+    outline: none;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #000;
+    color: gold;
+}
+
+#back-button {
+    visibility: hidden;
+}
+
+footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+    margin: 40px 0 20px 0;
+}
+
+.footer-logo {
+    font-family: 'Star Wars', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: aliceblue;
+}
+
+.copyright {
+    font-weight: 500;
+    color: aliceblue; 
+}
+
+.modal {
+    visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    top: 0;
+}
+
+.modal-content {
+    width: 25vw;
+    height: 70vh;
+    background-color: #0d0d0d;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    padding: 30px 10px;
+    align-items: center;
+}
+
+.cards-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-position: 50% 10%;
+    background-size: cover;
+}
+
+.card-details {
+    font-family: 'Star Wars', sans-serif;
+    font-size: 1rem;
+    font-weight: lighter;
+    color: gold;
+    text-align: center;
+}
+
+.footer-media {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        width: 95%;
+        height: 250px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .navigation {
+        display: flex;
+        justify-content: space-around;
+        row-gap: 5px;
+    }
+
+    .social-media {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+
+    h2 {
+        margin-top: 10px;
+    }
+
+    .cards {
+        width: 270px;
+    }
+
+    .main-content {
+        column-gap: 40px;
+        row-gap: 15px;  
+    }
+    
+    .modal-content {
+        width: 40vw;
+        height: 70vh;
+    }
+}
+
+@media(max-width: 541px) {
+    a {
+        width: 50%;
+    }
+
+    .cards {
+        width: 300px;
+    }
+
+    .modal-content {
+        width: 50vw;
+    }
+}   
+
+@media(max-width: 412px) {
+    header {
+        height: 430px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    .navigation {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .social-media {
+        display: none;
+    }
+
+    .modal-content {
+        width: 70vw;
+    }
+
+    .footer-logo {
+        font-size: 1.3rem;
+    }
+
+    .footer-media {
+        width: 60%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px;
+    }
+
+    
+} 
